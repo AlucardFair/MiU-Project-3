@@ -1,0 +1,6 @@
+Repo Location
+https://github.com/AlucardFair/MiU-Project-3
+
+Live gh-page
+http://alucardfair.github.com/MiU-Project-3/Bronze/index.html
+http://alucardfair.github.com/MiU-Project-3/Gold/index.html
