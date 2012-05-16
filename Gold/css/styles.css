@@ -27,6 +27,12 @@ https://github.com/AlucardFair/MiU-Project-3
 	text-indent: 40px;
 }
 
+label.error {
+	display: block;
+	margin: 10px 0;
+	color: #FF0000;
+}
+
 /*
 body {
 	font-family: Helvetica, Roboto, Droid-Sans;

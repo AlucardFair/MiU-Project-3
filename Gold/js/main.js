@@ -16,7 +16,7 @@ window.addEventListener("DOMContentLoaded", function() {
 	};
 	
 	// Create Select Element with Options//
-	function makeWorkoutStyle() {
+/*	function makeWorkoutStyle() {
 		var formTag = document.getElementsByTagName('form'),
 			selectList = ge('select'),
 			makeSelect = document.createElement('select');
@@ -29,7 +29,7 @@ window.addEventListener("DOMContentLoaded", function() {
 			makeSelect.appendChild(makeOption);
 		}
 		selectList.appendChild(makeSelect);
-	};
+	};*/
 	
 	// //
 	function getCheckboxValue() {
@@ -56,8 +56,8 @@ window.addEventListener("DOMContentLoaded", function() {
 			case "on":
 				ge('workoutForm').style.display = "none";
 				ge('showData').style.display = "none";
-				ge('clearData').style.display = "inline";
-				ge('startNew').style.display = "inline";
+				ge('clearData').style.display = "none";
+				ge('startNew').style.display = "none";
 				ge('saveData').style.display = "none";
 				break;
 			case "off":
@@ -106,11 +106,15 @@ window.addEventListener("DOMContentLoaded", function() {
 			alert("There is no data in Local Storage. \n Default Data was added.");
 			autoFillData();
 		}
+		// Create new page //
 		var makeDiv = document.createElement('div');
 		makeDiv.setAttribute("id", "items");
+		makeDiv.setAttribute("data-role", "page");
 		var makeList = document.createElement('ul');
+		makeList.setAttribute("id", "savedWorkouts")
+		makeList.setAttribute("data-role", "listview")
 		makeDiv.appendChild(makeList);
-		document.body.insertBefore(makeDiv, ge('foot'));
+		document.body.insertBefore(makeDiv);
 		// Set 'items' display //
 		ge('items').style.display = "block";
 		for(var i=0, j=localStorage.length; i<j; i++) {
@@ -248,7 +252,7 @@ window.addEventListener("DOMContentLoaded", function() {
 		}
 	};
 	
-	function validate(e) {
+/*	function validate(e) {
 		// Define elements we want to check //
 		var getStyle = ge('styles');
 		var getWname = ge('wname');
@@ -303,15 +307,35 @@ window.addEventListener("DOMContentLoaded", function() {
 			// If there are no errors, save the data //
 			saveData(this.key);
 		}
-	};
+	};*/
+
+	function validate() {
+		var parseForm = function(data) {
+			saveData(data);
+		};
+		// jQM Form Handler //
+		$(document).ready(function() {
+
+			var wfForm = $('#workoutForm');
+			wfForm.validate({
+				invalidHandler: function(form, validator) {},
+				submitHandler: function() {
+					var data = wfForm.serializeArray();
+					parseForm(data);
+				}
+			})
+
+		});
+	}
+
 	
-	// Variable defaults //
+/*	// Variable defaults //
 	var workoutTypes = ["*Choose A Style*", "Agility", "Cardio", "Flexibility", "Strength", "Tone"],
 		favoriteValue = "No",
 		timeValue,
 		confirmClear,
 		errMsg = ge('errors')
-	;
+	;*/
 	
 	// Set Link & Submit Click Events //
 	var displayLink = ge('showData');
@@ -322,6 +346,6 @@ window.addEventListener("DOMContentLoaded", function() {
 	submitData.addEventListener("click", validate);
 	
 	// Call Functions //
-	makeWorkoutStyle();
+//	makeWorkoutStyle(); //
 
 });

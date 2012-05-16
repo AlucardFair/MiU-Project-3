@@ -44,7 +44,7 @@
 		
 			<!-- Call to Action -->
 			<div>
-				<a href="additem.html" rel="external">
+				<a href="#additem">
 					<img class="imgSize" src="images/BHF_Feature.png"/>
 				</a>
 			</div>
@@ -200,6 +200,108 @@
 			</div>
 		</div>
 		
+	</div>
+
+		<!-- Start Add Item Page -->
+	<div data-role="page" id="additem">
+
+		<!-- Header -->
+		<div data-role="header" data-position="fixed" data-add-back-btn="true" class="mainColor">
+			<h1>Start a New Workout</h1>
+		</div>
+
+		<div data-role="content">
+
+			<!-- Display Link -->
+			<div id="nav">
+				<a href="#" id="showData" class="">Display Data</a>
+				<a href="#" id="clearData" class="">Clear Stored Data</a>
+				<!-- Start New Workout *hidden* -->
+				<a href="#additem" id="startNew" class="" style="display:none;">Start New Workout!</a>
+			</div>
+
+			<!-- Form Started -->
+			<form action="" method="post" id="workoutForm" data-ajax="false">
+
+				<!-- Workout Style / Select -->
+				<div data-role="fieldcontain">
+					<label for="training">Training Style:</label><br />
+					<select name="training" id="training" data-native-menu="false" class="required">
+						<option data-placeholder="true">*Choose A Style*</option>
+						<option value="Agility">Agility</option>
+						<option value="Cardio">Cardio</option>
+						<option value="Flexibility">Flexibility</option>
+						<option value="Strength">Strength</option>
+						<option value="Tone">Tone</option>
+					</select>
+				</div>
+
+				<!-- Workout Name / Text Field -->
+				<div data-role="fieldcontain">
+					<label for="wname">Workout Name:</label><br /><input type="text" id="wname" name="wname" class="required" placeholder="Running, Weights..." />
+				</div>
+
+				<!-- Favorite / Checkbox -->
+				<div data-role="fieldcontain">
+					<fieldset data-role="controlgroup">
+						<legend>Is this a favorite?</legend>
+						<input type="checkbox" value="Is this a favorite?" id="favorite" /><label for="favorite">Yes</label>
+					</fieldset>
+				</div>
+
+				<!-- How Long / Range -->
+				<div data-role="fieldcontain">
+					<label for="howlong">How long will this workout last? (5-60 Minutes)</label><br /><input type="range" id="howlong" name="howlong" value="20" min="5" max="60" step="5" />
+				</div>
+
+				<!-- Time of Day / Radio -->
+				<div data-role="fieldcontain">
+					<fieldset data-role="controlgroup">
+						<legend>Prefered Time of Workout</legend>
+						<input type="radio" value="Morning" id="morning" name="timeofday" class="required" />
+						<label for="morning">Morning</label>
+						<input type="radio" value="Afternoon" id="afternoon" name="timeofday" />
+						<label for="afternoon">Afternoon</label>
+						<input type="radio" value="Evening" id="evening" name="timeofday" />
+						<label for="evening">Evening</label>
+					</fieldset>
+				</div>
+
+				<!-- Completion Date -->
+				<label for="completiondate">Date to be completed</label><br /><input type="date" value="completiondate" id="completiondate" name="completiondate" />
+
+				<!-- Motivation / Comments -->
+				<div data-role="fieldcontain">
+					<label for="comments">Start getting yourself motivated.</label><br /><textarea id="comments" name="comments" class="required" placeholder="Motivation starts here."></textarea>
+				</div>
+
+
+				<!-- Submit(Save) and Reset -->
+				<div class="ui-grid-a">
+					<div class="ui-block-a">
+						<input type="submit" name="save" id="saveData" value="Save!" class="secondaryColor" />
+					</div>
+					<div class="ui-block-b">
+						<input type="reset" name="reset" id="reset" value="Reset" class="mainColor"/>
+					</div>
+				</div>
+
+			</form>
+
+		</div>
+
+		<!-- Footer -->
+		<div data-role="footer" data-position="fixed">
+			<!-- Navbar -->
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#home" data-icon="home" data-iconpos="left" class="mainColor">Home</a></li>
+					<li><a href="#about" data-icon="info" data-iconpos="left" class="mainColor">About</a></li>
+					<li><a href="#otherApp"data-icon="check" data-iconpos="left" class="mainColor">Other App</a></li>
+				</ul>
+			</div>
+		</div>
+
 	</div>
 	
 	<!-- Start of About Page -->
