@@ -23,6 +23,7 @@
 	
 	<!-- StyleSheets under here -->
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css"/>
+	<link rel="stylesheet" href="http://dev.jtsage.com/cdn/datebox/latest/jquery.mobile.datebox.min.css">
 	<link rel="stylesheet" href="css/styles.css"/>
 	
 	<!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
@@ -41,6 +42,13 @@
 		
 		<!-- Home Content -->
 		<div data-role="content">
+
+			<div>
+				<center>
+					<h2>Body Health & Fitness</h2>
+					<p>...helping you schedule your worouts</p>
+				</center>
+			</div>
 		
 			<!-- Call to Action -->
 			<div>
@@ -202,7 +210,7 @@
 		
 	</div>
 
-		<!-- Start Add Item Page -->
+	<!-- Start Add Item Page -->
 	<div data-role="page" id="additem">
 
 		<!-- Header -->
@@ -211,6 +219,16 @@
 		</div>
 
 		<div data-role="content">
+
+			<div>
+				<center>
+					<h2>Start a New Workout</h2>
+				</center>
+			</div>
+
+			<div>
+				<p>* Indicates Required Field</p>
+			</div>
 
 			<!-- Display Link -->
 			<div id="nav">
@@ -225,7 +243,7 @@
 
 				<!-- Workout Style / Select -->
 				<div data-role="fieldcontain">
-					<label for="training">Training Style:</label><br />
+					<label for="training">Training Style: *</label><br />
 					<select name="training" id="training" data-native-menu="false" class="required">
 						<option data-placeholder="true">*Choose A Style*</option>
 						<option value="Agility">Agility</option>
@@ -238,7 +256,7 @@
 
 				<!-- Workout Name / Text Field -->
 				<div data-role="fieldcontain">
-					<label for="wname">Workout Name:</label><br /><input type="text" id="wname" name="wname" class="required" placeholder="Running, Weights..." />
+					<label for="wname">Workout Name: *</label><br /><input type="text" id="wname" name="wname" class="required" placeholder="Running, Weights..." />
 				</div>
 
 				<!-- Favorite / Checkbox -->
@@ -268,7 +286,7 @@
 				</div>
 
 				<!-- Completion Date -->
-				<label for="completiondate">Date to be completed</label><br /><input type="date" value="completiondate" id="completiondate" name="completiondate" />
+				<label for="completiondate">Date to be completed *</label><br /><input type="date" value="YYYY-MM-DD" id="completiondate" name="completiondate" data-role="datebox" data-options='{"mode": "calbox", "calTodayButton": true}' />
 
 				<!-- Motivation / Comments -->
 				<div data-role="fieldcontain">
@@ -587,6 +605,7 @@
 	<!-- JavaScript under here -->
 	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
+	<script src="http://dev.jtsage.com/cdn/datebox/latest/jquery.mobile.datebox.min.js"></script>
 	<script type="text/javascript" src="js/libs/jquery.validate.min.js"></script>
 	<script type="text/javascript" src="js/json.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
