@@ -220,20 +220,20 @@
 
 		<div data-role="content">
 
-			<div>
+			<div id="screenTitle">
 				<center>
 					<h2>Start a New Workout</h2>
 				</center>
 			</div>
 
-			<div>
+			<div id="requiredIndicator">
 				<p>* Indicates Required Field</p>
 			</div>
 
 			<!-- Display Link -->
 			<div id="nav">
-				<a href="#" id="showData" class="">Display Data</a>
-				<a href="#" id="clearData" class="">Clear Stored Data</a>
+				<a href="#" id="showData" >Display Data</a>
+				<a href="#" id="clearData" >Clear Stored Data</a>
 				<!-- Start New Workout *hidden* -->
 				<a href="#additem" id="startNew" class="" style="display:none;">Start New Workout!</a>
 			</div>
@@ -276,7 +276,7 @@
 				<div data-role="fieldcontain">
 					<fieldset data-role="controlgroup">
 						<legend>Prefered Time of Workout</legend>
-						<input type="radio" value="Morning" id="morning" name="timeofday" class="required" />
+						<input type="radio" value="Morning" id="morning" name="timeofday" class="required" checked />
 						<label for="morning">Morning</label>
 						<input type="radio" value="Afternoon" id="afternoon" name="timeofday" />
 						<label for="afternoon">Afternoon</label>

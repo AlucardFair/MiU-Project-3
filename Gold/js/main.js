@@ -59,6 +59,8 @@ window.addEventListener("DOMContentLoaded", function() {
 				ge('clearData').style.display = "none";
 				ge('startNew').style.display = "none";
 				ge('saveData').style.display = "none";
+				ge('screenTitle').style.display = "none";
+				ge('requiredIndicator').style.display = "none";
 				break;
 			case "off":
 				ge('workoutForm').style.display = "block";
@@ -66,6 +68,8 @@ window.addEventListener("DOMContentLoaded", function() {
 				ge('clearData').style.display = "inline";
 				ge('startNew').style.display = "none";
 				ge('saveData').style.display = "inline";
+				ge('screenTitle').style.display = "inline";
+				ge('requiredIndicator').style.display = "inline";
 				ge('items').style.display = "none";
 				break;
 			default:
@@ -111,8 +115,6 @@ window.addEventListener("DOMContentLoaded", function() {
 		makeDiv.setAttribute("id", "items");
 		makeDiv.setAttribute("data-role", "page");
 		var makeList = document.createElement('ul');
-		makeList.setAttribute("id", "savedWorkouts")
-		makeList.setAttribute("data-role", "listview")
 		makeDiv.appendChild(makeList);
 		document.body.insertBefore(makeDiv);
 		// Set 'items' display //
@@ -172,10 +174,9 @@ window.addEventListener("DOMContentLoaded", function() {
 		editButton.addEventListener("click", editItem);
 		editButton.innerHTML = editTxt;
 		buttonsLi.appendChild(editButton);
-		// Add line break, kept hidden as I prefer them side by side //
-/*		var breakTag = document.createElement('br');
-		buttonsLi.appendChild(breakTag);*/
-		// Add single delete item button //
+		//  Create Break Between Buttons //
+		var breakTag = document.createElement('br');
+		buttonsLi.appendChild(breakTag);
 		var deleteButton = document.createElement('a');
 		deleteButton.setAttribute("id", "deleteButton");
 		deleteButton.href = "#";
