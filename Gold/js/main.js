@@ -59,8 +59,6 @@ window.addEventListener("DOMContentLoaded", function() {
 				ge('clearData').style.display = "none";
 				ge('startNew').style.display = "none";
 				ge('saveData').style.display = "none";
-				ge('screenTitle').style.display = "none";
-				ge('requiredIndicator').style.display = "none";
 				break;
 			case "off":
 				ge('workoutForm').style.display = "block";
@@ -68,8 +66,6 @@ window.addEventListener("DOMContentLoaded", function() {
 				ge('clearData').style.display = "inline";
 				ge('startNew').style.display = "none";
 				ge('saveData').style.display = "inline";
-				ge('screenTitle').style.display = "inline";
-				ge('requiredIndicator').style.display = "inline";
 				ge('items').style.display = "none";
 				break;
 			default:
@@ -116,7 +112,7 @@ window.addEventListener("DOMContentLoaded", function() {
 		makeDiv.setAttribute("data-role", "page");
 		var makeList = document.createElement('ul');
 		makeDiv.appendChild(makeList);
-		document.body.insertBefore(makeDiv);
+		document.body.appendChild(makeDiv);
 		// Set 'items' display //
 		ge('items').style.display = "block";
 		for(var i=0, j=localStorage.length; i<j; i++) {
@@ -330,13 +326,13 @@ window.addEventListener("DOMContentLoaded", function() {
 	}
 
 	
-/*	// Variable defaults //
-	var workoutTypes = ["*Choose A Style*", "Agility", "Cardio", "Flexibility", "Strength", "Tone"],
-		favoriteValue = "No",
+	// Variable defaults //
+	var favoriteValue = "No",
+		//workoutTypes = ["*Choose A Style*", "Agility", "Cardio", "Flexibility", "Strength", "Tone"],
 		timeValue,
-		confirmClear,
-		errMsg = ge('errors')
-	;*/
+		confirmClear
+		//errMsg = ge('errors')
+	;
 	
 	// Set Link & Submit Click Events //
 	var displayLink = ge('showData');
