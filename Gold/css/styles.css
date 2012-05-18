@@ -29,8 +29,12 @@ https://github.com/AlucardFair/MiU-Project-3
 
 label.error {
 	display: block;
-	margin: 10px 0;
+	margin: 20px 10px;
 	color: #FF0000;
+}
+
+.ui-btn-up-b {
+	background-image: -webkit-linear-gradient(bottom, rgb(147,84,22), rgb(199,136,74), rgb(250,187,25));
 }
 
 /*

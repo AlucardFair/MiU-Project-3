@@ -6,8 +6,8 @@ Project 3
 Body Health & Fitness
 https://github.com/AlucardFair/MiU-Project-3
 */
-// Wait until DOM is ready //
-window.addEventListener("DOMContentLoaded", function() {
+// jQM Form Handler //
+$(document).ready(function() {
 	
 	// getElementById function //
 	function ge(x) {
@@ -85,7 +85,7 @@ window.addEventListener("DOMContentLoaded", function() {
 		getCheckboxValue();
 		getSelectedRadio();
 		var item 				= {};
-			item.training 		= ["Training Style: ", ge('styles').value];
+			item.training 		= ["Training Style: ", ge('training').value];
 			item.wname			= ["Workout Name: ", ge('wname').value];
 			item.favorite		= ["Favorite: ", favoriteValue];
 			item.howlong		= ["How Long: ", ge('howlong').value + " minutes"];
@@ -190,7 +190,7 @@ window.addEventListener("DOMContentLoaded", function() {
 		// Turn form back on //
 		toggle("off");
 		// Populate form fields //
-		ge('styles').value = item.training[1];
+		ge('training').value = item.training[1];
 		ge('wname').value = item.wname[1];
 		if(item.favorite[1] == "Yes") {
 			ge('favorite').setAttribute("checked", "checked");
@@ -307,27 +307,20 @@ window.addEventListener("DOMContentLoaded", function() {
 	};*/
 
 	function validate() {
-		var parseForm = function(data) {
-			saveData(data);
-		};
-		// jQM Form Handler //
-		$(document).ready(function() {
-
-			var wfForm = $('#workoutForm');
-			wfForm.validate({
-				invalidHandler: function(form, validator) {},
-				submitHandler: function() {
-					var data = wfForm.serializeArray();
-					parseForm(data);
-				}
-			})
-
-		});
-	}
+		wfForm.validate({
+			invalidHandler: function(form, validator) {
+				alert("There are required fields left empty.")
+			},
+			submitHandler: function() {
+				saveData(this.key);
+			}
+		})
+	};
 
 	
 	// Variable defaults //
 	var favoriteValue = "No",
+		wfForm = $('#workoutForm'),
 		//workoutTypes = ["*Choose A Style*", "Agility", "Cardio", "Flexibility", "Strength", "Tone"],
 		timeValue,
 		confirmClear
